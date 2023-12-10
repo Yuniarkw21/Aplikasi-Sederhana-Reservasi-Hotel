@@ -10,6 +10,7 @@
 	import java.awt.*;  
 	import java.awt.event.*;
 	public class ReservasiHotel extends Frame implements ActionListener{
+ 
 		JFrame frame1;
 		JTextField nama;
 		JTextField hp;
