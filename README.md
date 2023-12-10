@@ -2,33 +2,33 @@
 • Dibuat dengan menggunakan bahasa pemrograman Java. 
 • Dibantu dengan Notepad++ dan Java Development Kit (JDK).
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import javax.swing.*;  
-import java.awt.*;  
-import java.awt.event.*;
-public class ReservasiHotel extends Frame implements ActionListener{
-	JFrame frame1;
-	JTextField nama;
-	JTextField hp;
-	JTextField checkin;
-	JTextField hari;
-	JLabel ljudul;
-	JLabel lwelcome;
-	JLabel lnama, lnama2;
-	JLabel lhp, lhp2;
-	JLabel lcheckin, lcheckin2;
-	JLabel lhari, lhari2;
-	JLabel ltipe, ltipe2;
-	JLabel lharga;
-	JLabel lcheckout;
-	JComboBox tipe;
-	JButton oke, reset;
-	ReservasiHotel (){
+	import java.text.DateFormat;
+	import java.text.SimpleDateFormat;
+	import java.util.Calendar;
+	import java.util.Date;
+	import javax.swing.*;  
+	import java.awt.*;  
+	import java.awt.event.*;
+	public class ReservasiHotel extends Frame implements ActionListener{
+		JFrame frame1;
+		JTextField nama;
+		JTextField hp;
+		JTextField checkin;
+		JTextField hari;
+		JLabel ljudul;
+		JLabel lwelcome;
+		JLabel lnama, lnama2;
+		JLabel lhp, lhp2;
+		JLabel lcheckin, lcheckin2;
+		JLabel lhari, lhari2;
+		JLabel ltipe, ltipe2;
+		JLabel lharga;
+		JLabel lcheckout;
+		JComboBox tipe;
+		JButton oke, reset;
+		ReservasiHotel (){
 
-    //Menampilkan Judul Program
+    		//Menampilkan Judul Program
 		JFrame frame1 = new JFrame ("Reservasi Hotel");
 		ljudul = new JLabel (" ");
 		ljudul.setBounds (280, 390, 150, 20);
@@ -56,7 +56,7 @@ public class ReservasiHotel extends Frame implements ActionListener{
 		//Memilih Tipe Kamar dengan JComboBox
 		ltipe = new JLabel ("Tipe Kamar :");
 		ltipe.setBounds (50, 170, 300, 20);
-    String types[] = {"President (Rp 1.000.000/hari)", "Suite (Rp 500.000/hari)", "Superior (Rp 375.000/hari)", "Deluxe (Rp 300.000/hari)", "Standard (Rp 275.000/hari)"};        
+   		String types[] = {"President (Rp 1.000.000/hari)", "Suite (Rp 500.000/hari)", "Superior (Rp 375.000/hari)", "Deluxe (Rp 300.000/hari)", "Standard (Rp 275.000/hari)"};        
 		final JComboBox tipe = new JComboBox (types);    
 		tipe.setBounds (250, 170, 200, 20);
 		ltipe2 = new JLabel ();
@@ -76,7 +76,7 @@ public class ReservasiHotel extends Frame implements ActionListener{
 		lhari2 = new JLabel ();
 		lhari2.setBounds (220, 500, 300, 20);
 
-    //Menggunakan JButton untuk Menampilkan Hasil Input Data
+    		//Menggunakan JButton untuk Menampilkan Hasil Input Data
 		JButton oke = new JButton ("Oke");  
 		oke.setBounds (190, 330, 95, 30);
 		oke.addActionListener (this);
@@ -90,7 +90,7 @@ public class ReservasiHotel extends Frame implements ActionListener{
 		lharga = new JLabel ();
 		lharga.setBounds (220, 540, 300, 20);
 
-    frame1.add (nama);
+    		frame1.add (nama);
 		frame1.add (hp);
 		frame1.add (checkin);
 		frame1.add (hari);
@@ -109,7 +109,7 @@ public class ReservasiHotel extends Frame implements ActionListener{
 		frame1.setLayout (null);  
 		frame1.setVisible (true);
 
-    //Menampilkan Hasil Akhir Input Data dengan Tombol "Oke"
+    		//Menampilkan Hasil Akhir Input Data dengan Tombol "Oke"
 		oke.addActionListener (new ActionListener (){
 			public String kelas;
 			public int harga;
@@ -120,7 +120,7 @@ public class ReservasiHotel extends Frame implements ActionListener{
 				String jenis = "Tipe Kamar : "   
 				+ tipe.getItemAt (tipe.getSelectedIndex ());
 
-        //Convert String to Integer
+        			//Convert String to Integer
 				int lama = Integer.parseInt (hari.getText ());
 				kelas = (String) tipe.getSelectedItem();
 				if (kelas == "Standard (Rp 275.000/hari)"){
@@ -145,7 +145,7 @@ public class ReservasiHotel extends Frame implements ActionListener{
 			}  
 		});
 
-    //Menghapus Input Data dengan Tombol "Reset",sehingga Data Dapat Diisi secara Berulang
+    		//Menghapus Input Data dengan Tombol "Reset",sehingga Data Dapat Diisi secara Berulang
 		reset.addActionListener (new ActionListener (){
 			public void actionPerformed (ActionEvent e){
 				nama.setText ("");
@@ -167,7 +167,7 @@ public class ReservasiHotel extends Frame implements ActionListener{
 			String host3 = hari.getText ();   
 			lhari2.setText ("Lama Menginap : "+host3 +" hari");
 
-     //Menampilkan Tanggal CheckOut berdasarkan Tanggal Check In dan Lama Menginap (Hari)
+     			//Menampilkan Tanggal CheckOut berdasarkan Tanggal Check In dan Lama Menginap (Hari)
 			DateFormat df = new SimpleDateFormat("dd/MM/yyyy"); 
 			Date date = df.parse (checkin.getText ()); 
 			lcheckin2.setText ("Check In : "+df.format (date));
